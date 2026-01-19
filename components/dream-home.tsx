@@ -1,19 +1,36 @@
 import React from 'react'
-import { Flex, Heading, Image, Text } from '@chakra-ui/core'
-
+import { Box, Flex, Heading, Text } from '@chakra-ui/core'
+import { FaConciergeBell, FaWifi, FaUtensils } from 'react-icons/fa'
 
 const DreamHome: React.FC = () => {
   return (
-    <Flex width="100%" flexDirection="column" alignItems="center" mt="10">
+    <Box
+      width="100%"
+      minHeight="60vh"
+      style={{
+        backgroundImage: "url('')",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed', 
+      }}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      pt="10"
+      pb="20"
+    >
       <Heading
         as="h3"
         mb="10"
         fontSize={['2xl', '2xl', '3xl', '3xl', '3xl']}
         textAlign="center"
-        marginX="auto"
+        color="black"
       >
-        This is home away from home
+        This Is Your Home Away From Home
       </Heading>
+
       <Flex
         width="90%"
         flexDirection={['column', 'column', 'column', 'row', 'row']}
@@ -22,72 +39,50 @@ const DreamHome: React.FC = () => {
         maxW="1280px"
         mb="12"
       >
-        <Flex
-          flexDirection="row"
-          alignItems="center"
-          maxW="380px"
-          mb={['8', '8', '8', '0', '0']}
-        >
-          <Image
-            src="/icon/power-icon.png"
-            alt="Power Icon"
-            width="50px"
-            height="50px"
-            mr="18px"
-          />
-          <Flex flexDirection="column" fontSize="xl">
-            <Text fontWeight="bold">24 hours room service</Text>
-            <Text fontSize="sm">
-              Talk to our designers online and start planning your interiors
-              from the comfort of your home.
+        {/* 24-Hour Room Service */}
+        <Flex alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
+          <FaConciergeBell size={50} color="#F6A623" style={{ marginRight: '18px' }} />
+          <Flex flexDirection="column">
+            <Text fontWeight="bold" fontSize="lg" color="black">
+              24-Hour Room Service
+            </Text>
+            <Text fontSize="sm" maxWidth="250px" color="blackAlpha.900">
+              Enjoy freshly prepared meals and in-room dining at any hour,
+              delivered straight to your comfort.
             </Text>
           </Flex>
         </Flex>
-        <Flex
-          flexDirection="row"
-          alignItems="center"
-          maxW="380px"
-          mb={['8', '8', '8', '0', '0']}
-        >
-          <Image
-            src="/icon/rocket-icon.png"
-            alt="Man with a rocket"
-            width="50px"
-            height="50px"
-            mr="18px"
-          />
-          <Flex flexDirection="column" fontSize="xl">
-            <Text fontWeight="bold">24 hours internet</Text>
-            <Text fontSize="sm">
-              We’ve dropped our booking fees. Now book your projects by paying
-              just 5% instead 10%.
+
+        {/* High-Speed Wi-Fi */}
+        <Flex alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
+          <FaWifi size={40} color="#F6A623" style={{ marginRight: '18px' }} />
+          <Flex flexDirection="column">
+            <Text fontWeight="bold" fontSize="lg" color="black">
+              High-Speed Wi-Fi
+            </Text>
+            <Text fontSize="sm" maxWidth="250px" color="blackAlpha.900">
+              Stay connected with fast, reliable internet throughout the hotel,
+              whether for work or leisure.
             </Text>
           </Flex>
         </Flex>
-        <Flex
-          flexDirection="row"
-          alignItems="center"
-          maxW="380px"
-          mb={['8', '8', '8', '0', '0']}
-        >
-          <Image
-            src="/icon/power-icon.png"
-            alt="Power Icon"
-            width="50px"
-            height="50px"
-            mr="18px"
-          />
-          <Flex flexDirection="column" fontSize="xl">
-            <Text fontWeight="bold">restaurant and bar</Text>
-            <Text fontSize="sm">
-              Get 100% refund on cancellations done within 15 days of booking.
-              Valid till 30th June, 2020.
+
+        {/* Restaurant & Bar */}
+        <Flex alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
+          <FaUtensils size={40} color="#F6A623" style={{ marginRight: '18px' }} />
+          <Flex flexDirection="column">
+            <Text fontWeight="bold" fontSize="lg" color="black">
+              Restaurant & Bar
+            </Text>
+            <Text fontSize="sm" maxWidth="250px" color="blackAlpha.900">
+              Indulge in fine dining and handcrafted drinks at our elegant
+              on-site restaurant and bar.
             </Text>
           </Flex>
         </Flex>
       </Flex>
-     
-    </Flex>
+    </Box>
   )
 }
+
 export default DreamHome

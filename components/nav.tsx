@@ -1,25 +1,27 @@
 import React from 'react'
-import { Box, Flex, Link, Button, Stack } from '@chakra-ui/core'
+import { Flex, Box, Button, Stack, Link as ChakraLink } from '@chakra-ui/core'
+import NextLink from 'next/link'
 // import Logo from './logo'
 
 interface MenuItem {
-  link?: string
+  link: string
 }
 
 const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
-  <Link
-    href={link}
-    mt={[4, 4, 0, 0]}
-    mr={'36px'}
-    display="block"
-    fontWeight="medium"
-    fontSize="md"
-  >
-    {children}
-  </Link>
+  <NextLink href={link} passHref>
+    <ChakraLink
+      mt={[4, 4, 0, 0]}
+      mr="36px"
+      display="block"
+      fontWeight="medium"
+      fontSize="md"
+    >
+      {children}
+    </ChakraLink>
+  </NextLink>
 )
 
-const Nav = props => {
+const Nav = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
 
@@ -44,6 +46,7 @@ const Nav = props => {
         {/* <Logo /> */}
       </Flex>
 
+      {/* Mobile Menu Toggle */}
       <Box display={['block', 'block', 'none', 'none']} onClick={handleToggle}>
         <svg
           fill="#FBA442"
@@ -56,23 +59,24 @@ const Nav = props => {
         </svg>
       </Box>
 
+      {/* Menu Items */}
       <Box
         display={[
           show ? 'block' : 'none',
           show ? 'block' : 'none',
           'flex',
-          'flex'
+          'flex',
         ]}
         width={['full', 'full', 'auto', 'auto']}
         marginTop={['20px', '20px', 'auto', 'auto']}
         textAlign="center"
         alignItems="center"
       >
-        <MenuItems>Home</MenuItems>
-        <MenuItems>Our Rooms</MenuItems>
-        <MenuItems>Restaurant</MenuItems>
-        <MenuItems>Our Gym</MenuItems>
-        <MenuItems>Book A Room</MenuItems>       
+        <MenuItems link="/">Home</MenuItems>
+        <MenuItems link="/rooms">Our Rooms</MenuItems>
+        <MenuItems link="/restaurant">Restaurant</MenuItems>
+        <MenuItems link="/gym">Our Gym</MenuItems>
+        <MenuItems link="/book">Book A Room</MenuItems>
       </Box>
     </Flex>
   )

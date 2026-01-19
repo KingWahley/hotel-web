@@ -4,41 +4,56 @@ import Button from './button'
 
 const About: React.FC = () => {
   return (
-    <Grid templateColumns="repeat(6, 1fr)" marginY="24" alignItems="center">
+    <Grid
+      templateColumns="repeat(6, 1fr)"
+      mb="24"
+      mt="10"
+      alignItems="center"
+      gap={6}
+      display={['none', 'none', 'none', 'grid', 'grid']}
+    >
       <Flex
         flexDirection="column"
-        flexWrap="nowrap"
         gridColumn={['1 / 7', '1 / 7', '1 / 7', '1 / 4', '1 / 4']}
-        alignItems="center"
-        paddingX={['8', '8', '8', '24', '24']}
-        marginX="auto"
+        alignItems={['center', 'center', 'center', 'flex-start', 'flex-start']}
+        textAlign={['center', 'center', 'center', 'left', 'left']}
+        px={['4', '8', '8', '0', '0']}
+        mx="auto"
         maxW="850px"
       >
         <Heading
           as="h3"
           textTransform="uppercase"
-          fontSize="5xl"
+          fontSize={['3xl', '4xl', '4xl', '5xl', '5xl']}
           fontWeight="normal"
-          mb="20px"
-          alignSelf="flex-start"
+          mb="6"
         >
-          About us
+          About Us
         </Heading>
-        <Text fontSize="md" mb="20px" alignSelf="flex-start" textAlign="left">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s.
+
+        <Text
+          fontSize={['sm', 'md', 'md', 'md', 'md']}
+          mb="6"
+          maxWidth={['100%', '100%', '100%', '450px', '450px']}
+        >
+        You are in good hands. With years of experience in hospitality, we know what it takes to make every stay special. From personalized service to carefully crafted amenities, you can relax knowing you’re in good hands. Whether you’re here for business or leisure, our team is dedicated to making your experience unforgettable.
         </Text>
-        <Button>Learn More</Button>
+
+        <Button>Book Room</Button>
       </Flex>
-      <Box gridColumn="4 / 7">
+
+      <Box
+        gridColumn={['1 / 7', '1 / 7', '1 / 7', '4 / 7', '4 / 7']}
+        display={['none', 'none', 'none', 'block', 'block']}
+        overflow="hidden" // ensures the border-radius clips the image
+      >
         <Image
-          src="/about-us-bg.png"
-          display={['none', 'none', 'none', 'block', 'block']}
+          src="/about-us-bg.webp"
           width="100%"
+          height="100%"
+          objectFit="cover"
+          borderTopLeftRadius="50px"
+          borderBottomLeftRadius="50px"
         />
       </Box>
     </Grid>

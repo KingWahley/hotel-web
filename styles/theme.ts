@@ -1,6 +1,13 @@
 import { theme, DefaultTheme } from '@chakra-ui/core'
 
-const breakpoints = ["360px", "768px", "1024px", "1440px"];
+const breakpoints = [
+  "360px",   // mobile
+  "768px",   // tablet
+  "1024px",  // small laptop
+  "1280px",  // standard laptop ✅
+  "1440px"   // large desktop
+];
+
 // breakpoints.sm = breakpoints[0];
 // breakpoints.md = breakpoints[1];
 // breakpoints.lg = breakpoints[2];

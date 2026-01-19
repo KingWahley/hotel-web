@@ -3,20 +3,9 @@ import { Grid, Text, Flex, Heading, Button, Box, Image } from '@chakra-ui/core'
 
 const Service: React.FC = () => {
   return (
-    <Box position="relative">
-      <Image
-        width={['0%', '0%', '0%', '40%', '60%']}
-        maxW="660px"
-        position="absolute"
-        top="40%"
-        left="5%"
-        src="/service-bg.png"
-        display={['none', 'none', 'none', 'block', 'block']}
-        borderColor="white"
-        borderWidth="10px"
-        borderStyle="solid"
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-      />
+    <Box position="relative"       display={['grid', 'grid', 'none', 'none', 'none']}
+>
+      
       <Grid
         backgroundColor="orange.500"
         templateColumns="repeat(12, 1fr)"
@@ -40,17 +29,9 @@ const Service: React.FC = () => {
             mb="8px"
             alignSelf="flex-start"
           >
-            Our Professional Services
+            you are in good hands
           </Heading>
-          <Heading
-            as="h4"
-            fontSize={['lg', 'lg', 'xl', 'xl', 'xl']}
-            fontWeight="normal"
-            mb="20px"
-            alignSelf="flex-start"
-          >
-            We Will Create Modern And First Class Intorior.
-          </Heading>
+         
           <Text
             fontSize="sm"
             mb="20px"
@@ -58,15 +39,7 @@ const Service: React.FC = () => {
             textAlign="left"
             lineHeight="23px"
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make aa type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            With years of experience in hospitality, we know what it takes to make every stay special. From personalized service to carefully crafted amenities, you can relax knowing you’re in good hands. Whether you’re here for business or leisure, our team is dedicated to making your experience unforgettable.
           </Text>
           <Button
             alignSelf="flex-start"
@@ -75,7 +48,7 @@ const Service: React.FC = () => {
             color="orange.500"
             width="fit-content"
           >
-            Learn More
+            Book Your Room
           </Button>
         </Flex>
       </Grid>
